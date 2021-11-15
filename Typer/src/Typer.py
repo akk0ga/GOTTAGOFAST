@@ -5,6 +5,7 @@ import time
 
 class Typing:
     __WORDS_FILE: str = 'Typer/src/words.json'
+    __PREPARE_TIME: int = 3
 
     def __repr__(self):
         return 'build a new typing test'
@@ -39,7 +40,8 @@ class Typing:
         words_list = self.__generate_words_list()
 
         print('BE READY')
-        for i in range(0, 3):
+        for i in range(0, self.__PREPARE_TIME):
+            print(self.__PREPARE_TIME-i)
             time.sleep(1)
             i += 1
         print('GOTTA GO FAST')
@@ -59,4 +61,4 @@ class Typing:
             print('=====================================')
 
         t2 = time.time()
-        print(f'YOUR SCORE IS {t2-t1}')
+        print(f'YOUR SCORE IS {t2 - t1}')
